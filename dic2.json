@@ -2,6 +2,7 @@
     "happy":[
         {
             "id":0,
+            "word":"happy",
             "meaning": "feeling or showing pleasure or contentment",
             "firstOccurence":"1960",
             "relatedLinks":[

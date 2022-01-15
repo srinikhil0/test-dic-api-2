@@ -1,0 +1,882 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+.title {
+    font-family: "Montserrat";
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    letter-spacing: 1px;
+}
+
+h1 {
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 120px;
+    line-height: .75;
+    margin: 10px 0;
+}
+
+/* styling my button */
+
+.white-mode0 {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode0:hover {
+    background-color: #FFF;
+    color: #122;
+}
+
+.white-mode1 {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 135px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode1:hover {
+    background-color: #FFF;
+    color: #122;
+}
+
+.white-mode2 {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 280px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode2:hover {
+    background-color: #FFF;
+    color: #122;
+}
+
+.white-mode3 {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 390px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode3:hover {
+    background-color: #FFF;
+    color: #122;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+
+.container {
+    padding: 10px 50px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    text-decoration: none;
+    color: black;
+}
+
+/* The circles on the timeline */
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #61D4E8;
+    border: 4px solid #2DA1E7;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+
+.left {
+    left: -100px;
+}
+
+/* Place the container to the right */
+
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+
+.right::after {
+    left: -16px;
+}
+
+/* The actual content */
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 15px;
+    }
+    /* Make all right containers behave like the left ones */
+    .left {
+        left: 0%;
+    }
+    .right {
+        left: 0%;
+    }
+}
+
+.wrapper {
+    background: #171c24;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.wrapper nav {
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .content1 {
+    display: flex;
+    align-items: center;
+}
+
+nav .content1 .links {
+    margin-left: 80px;
+    display: flex;
+}
+
+.content1 .logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.content1 .links li {
+    list-style: none;
+    line-height: 70px;
+}
+
+.content1 .links li a, .content1 .links li label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.content1 .links li label {
+    display: none;
+}
+
+.content1 .links li a:hover, .content1 .links li label:hover {
+    background: #323c4e;
+}
+
+.wrapper .search-icon, .wrapper .menu-icon {
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 70px;
+    width: 70px;
+    text-align: center;
+}
+
+.wrapper .menu-icon {
+    display: none;
+}
+
+.wrapper #show-search:checked~.search-icon i::before {
+    content: "\f00d";
+}
+
+.wrapper .search-box {
+    position: absolute;
+    height: 100%;
+    max-width: calc(100% - 50px);
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.wrapper #show-search:checked~.search-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #fff;
+    background: #171c24;
+    padding: 0 100px 0 15px;
+}
+
+.search-box input::placeholder {
+    color: #f2f2f2;
+}
+
+.search-box .go-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 60px;
+    width: 70px;
+    background: #171c24;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.wrapper input[type="checkbox"] {
+    display: none;
+}
+
+/* Dropdown Menu code start */
+
+.content1 .links ul {
+    position: absolute;
+    background: #171c24;
+    top: 80px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.content1 .links li:hover>ul {
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
+
+.content1 .links ul li a {
+    display: block;
+    width: 100%;
+    line-height: 30px;
+    border-radius: 0px!important;
+}
+
+.content1 .links ul ul {
+    position: absolute;
+    top: 0;
+    right: calc(-100% + 8px);
+}
+
+.content1 .links ul li {
+    position: relative;
+}
+
+.content1 .links ul li:hover ul {
+    top: 0;
+}
+
+/* Responsive code start */
+
+@media screen and (max-width: 1250px) {
+    .wrapper nav {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    nav .content1 .links {
+        margin-left: 30px;
+    }
+    .content1 .links li a {
+        padding: 8px 13px;
+    }
+    .wrapper .search-box {
+        max-width: calc(100% - 100px);
+    }
+    .wrapper .search-box input {
+        padding: 0 100px 0 15px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .menu-icon {
+        display: block;
+    }
+    .wrapper #show-menu:checked~.menu-icon i::before {
+        content: "\f00d";
+    }
+    nav .content1 .links {
+        display: block;
+        position: fixed;
+        background: #14181f;
+        height: 100%;
+        width: 100%;
+        top: 70px;
+        left: -100%;
+        margin-left: 0;
+        max-width: 350px;
+        overflow-y: auto;
+        padding-bottom: 100px;
+        transition: all 0.3s ease;
+    }
+    nav #show-menu:checked~.content1 .links {
+        left: 0%;
+    }
+    .content1 .links li {
+        margin: 15px 20px;
+    }
+    .content1 .links li a, .content1 .links li label {
+        line-height: 40px;
+        font-size: 20px;
+        display: block;
+        padding: 8px 18px;
+        cursor: pointer;
+    }
+    .content1 .links li a.desktop-link {
+        display: none;
+    }
+    /* dropdown responsive code start */
+    .content1 .links ul, .content1 .links ul ul {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    .content1 .links #show-features:checked~ul, .content1 .links #show-services:checked~ul, .content1 .links #show-items:checked~ul {
+        max-height: 100vh;
+    }
+    .content1 .links ul li {
+        margin: 7px 20px;
+    }
+    .content1 .links ul li a {
+        font-size: 18px;
+        line-height: 30px;
+        border-radius: 5px!important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper nav {
+        padding: 0 10px;
+    }
+    .content .logo a {
+        font-size: 27px;
+    }
+    .wrapper .search-box {
+        max-width: calc(100% - 70px);
+    }
+    .wrapper .search-box .go-icon {
+        width: 30px;
+        right: 0;
+    }
+    .wrapper .search-box input {
+        padding-right: 30px;
+    }
+}
+
+.out_about {
+    position: relative;
+    margin: 0 25px 100px 25px;
+    padding: 25px;
+    box-shadow: rgb(171 142 142 / 35%) 0px 5px 15px;
+    border-radius: 20px;
+    max-width: 1000px;
+    left: 200px;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: -webkit-xxx-large;
+    color: #FFD700;
+}
+
+.about_info p {
+    font-size: 20px;
+    color: #ccc;
+    text-align: justify;
+}
+
+.about_info u {
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 23px;
+}
+
+.about_info ul {
+    position: relative;
+    left: 45px;
+    color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    /* display: flex; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: rgb(238 234 234 / 42%) 0px 2px 4px 0px inset;
+    margin-top: 50px;
+}
+
+footer .container1{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .container1 .sec{
+    margin-right: 30px;
+}
+
+footer .container1 .sec.aboutus{
+    width: 40%;
+}
+
+footer .container1 h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container1 h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer p{
+    color: #999;
+
+}
+
+.sci{
+    margin-top: 20px;
+    display: flex;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sci li a:hover{
+    background: #4267B2;
+}
+
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+
+.quicklinks{
+    position: relative;
+    width: 25%;
+}
+
+.quicklinks ul li{
+    list-style: none;
+}
+
+.quicklinks ul li a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quicklinks ul li a:hover{
+    color: #fff;
+}
+
+.contact{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+.contact .info{
+    position: relative;
+}
+
+.contact .info li{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact .info li span{
+    color: #999;
+}
+
+.contact .info li a{
+    color: #999;
+}
+
+.contact .info li a:hover{
+    color: #fff;
+}
+
+.copyrightText{
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 40px;
+    }
+    footer .container1{
+        flex-direction: column;
+    }
+    footer .container1 .sec{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container1 .sec.aboutus,
+    .quicklinks,
+    .contact{
+        width: 100%;
+    }
+    .copyrightText{
+        padding: 8px 40px;
+    }
+}
+
+.dic_body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background: #4d59fb; */
+}
+
+.dic_wrapper{
+    width: 420px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 28px 28px 45px;
+}
+
+.dic_wrapper header{
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.dic_wrapper .dic_search{
+    position: relative;
+    margin: 35px 0 18px;
+}
+
+.dic_search input{
+    height: 53px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+    /* padding: 0 42px; */
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.dic_search input:focus{
+    /* padding: 0 41px; */
+    border: 2px solid #4d59fb;
+}
+
+.dic_search input::placeholder{
+    color: #b8b8b8;
+}
+
+.dic_search :where(i, span){
+    position: absolute;
+    top: 50%;
+    color: #999;
+    transform: translateY(-50%);
+}
+
+.dic_search i{
+    left: 18px;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.dic_search input:focus ~ i{
+    color: #4d59fb;
+}
+
+.dic_search span{
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+.dic_search input:valid ~ span{
+    display: block;
+}
+
+.dic_wrapper ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 17px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.dic_wrapper ul{
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.dic_wrapper.active ul{
+    height: 303px;
+    opacity: 1;
+}
+
+.dic_wrapper.active .dic_info-text{
+    display: none;
+}
+
+.dic_wrapper .dic_info-text{
+    font-size: 13px;
+    color: #9a9a9a;
+    margin: -3px 0 -10px;
+}
+
+.dic_info-text span{
+    font-weight: 500;
+}
+
+ul li:last-child{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px;
+}
+
+ul .dic_word p{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+ul .dic_word span{
+    font-size: 14px;
+    color: #989898;
+}
+
+ul .dic_word i{
+    cursor: pointer;
+    font-size: 15px;
+    color: #999;
+}
+
+ul .dic_content{
+    max-height: 215px;
+    overflow-y: auto;
+}
+
+ul .dic_content::-webkit-scrollbar{
+    width: 0px;
+}
+
+.dic_content li .dic_detail{
+    padding-left: 10px;
+    border-radius: 4px 0 0 4px;
+    border-left: 3px solid #4d59fb;
+}
+
+.dic_content li .dic_detail p{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.dic_content li .dic_detail span{
+    font-size: 15px;
+    color: #7e7e7e;
+}
+
+.dic_synonyms .dic_detail .dic_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dic_synonyms .dic_detail .dic_list span{
+    margin-right: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}

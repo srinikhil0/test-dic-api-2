@@ -870,13 +870,17 @@ ul .dic_content::-webkit-scrollbar{
     color: #7e7e7e;
 }
 
-.dic_synonyms .dic_detail .dic_list{
+.dic_relatedLinks .dic_detail .dic_list{
     display: flex;
     flex-wrap: wrap;
 }
 
-.dic_synonyms .dic_detail .dic_list span{
+.dic_relatedLinks .dic_detail .dic_list span{
     margin-right: 5px;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.dic_relatedLinks .dic_detail .dic_list span a{
+    text-decoration: none;
 }

@@ -8,7 +8,7 @@ const wrapper = document.querySelector(".dic_wrapper"),
 
 //data function
 function data(result, dic_word) {
-    if (result) {
+    if (result.title) {
         //if api returns the message of pass by word
         infoText.innerHTML = `Can't find the meaning of <span>"${dic_word}"</span>. Please, check your spelling or try to search with another word`;
     } else {

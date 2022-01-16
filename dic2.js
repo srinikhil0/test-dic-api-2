@@ -8,7 +8,7 @@ const wrapper = document.querySelector(".dic_wrapper"),
 
 //data function
 function data(result, dic_word) {
-    if (result.title) {
+    if (result) {
         //if api returns the message of pass by word
         infoText.innerHTML = `Can't find the meaning of <span>"${dic_word}"</span>. Please, check your spelling or try to search with another word`;
     } else {
@@ -24,20 +24,20 @@ function data(result, dic_word) {
         document.querySelector(".dic_example span").innerText = definitions.firstOccurence;
         // audio = new Audio("https:" + result[0].phonetics[0].audio); //creating new audio object and passing audio src
 
-        if (definitions.relatedLinks[0] == undefined) { //if there is no synonym then hide the synonym div
+        if (definitions.relatedLinks[0] == undefined) { //if there is no relatedLinks then hide the relatedLinks div
             relatedLinks.parentElement.style.display = "none";
         } else {
             relatedLinks.parentElement.style.display = "block";
             relatedLinks.innerHTML = "";
             for (let i = 0; i < 5; i++) { //getting only 5 relatedLinks out of many
                 let tag = `<span onclick=search('${definitions.relatedLinks[i]}')><a href="https://${definitions.relatedLinks[i]}" target="_blank">${definitions.relatedLinks[i]}</a>,</span>`;
-                relatedLinks.insertAdjacentHTML("beforeend", tag); //passing all 5 relatedLinks inside relatedLinks           
+                relatedLinks.insertAdjacentHTML("beforeend", tag); //passing all 5 Links inside relatedLinks           
             }
         }
     }
 }
 
-//search synonym word
+//search relatedLinks word
 // function search(word){
 //     searchInput.value = word;
 //     fetchApi(word);

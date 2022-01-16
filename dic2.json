@@ -1,7 +1,6 @@
 {
     "happy": [
         {
-            "id": 0,
             "word": "happy",
             "meaning": "feeling or showing pleasure or contentment",
             "firstOccurence": "1960",
@@ -16,7 +15,6 @@
     ],
     "sad": [
         {
-            "id": 0,
             "word": "sad",
             "meaning": "sad",
             "firstOccurence": "1970",
@@ -27,10 +25,9 @@
                 "www.nippobatteries.com",
                 "www.apollo.com"
             ]
-        }        
+        }
     ],
-    "title":
-    {
+    "": {
         "title": "No Definitions Found",
         "message": "Sorry pal, we couldn't find definitions for the word you were looking for.",
         "resolution": "You can try the search again at later time or head to the web instead."

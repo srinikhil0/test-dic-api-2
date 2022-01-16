@@ -18,7 +18,7 @@ function data(result, dic_word) {
         // phonetics = `${result[0].meanings[0].partOfSpeech} / ${result[0].phonetics[0].text}/`;
 
         //passing the particular response data to a particular html element
-        document.querySelector(".dic_word p").innerText = result[0].word;
+        document.querySelector(".dic_word p").innerText = definitions.word;
         // document.querySelector(".dic_word span").innerText = phonetics;
         document.querySelector(".dic_meaning span").innerText = definitions.meaning;
         document.querySelector(".dic_example span").innerText = definitions.firstOccurence;

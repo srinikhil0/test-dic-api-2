@@ -60,9 +60,9 @@ searchInput.addEventListener("keyup", e => {
     }
 });
 
-volumeIcon.addEventListener("click", () => {
-    audio.play();
-});
+// volumeIcon.addEventListener("click", () => {
+//     audio.play();
+// });
 
 removeIcon.addEventListener("click", () => {
     searchInput.value = "";
